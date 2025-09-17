@@ -12,4 +12,6 @@ public class ApplicationDbContext : IdentityDbContext
     }
 
     public DbSet<Menu> Menus { get; set; }
+    public DbSet<MenuCategory> MenuCategories { get; set; }
+    public DbSet<MenuItem> MenuItems { get; set; }
 }
