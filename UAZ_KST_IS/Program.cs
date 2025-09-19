@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using UAZ_KST_IS.Business.Profiles;
+using UAZ_KST_IS.Business.Repositories;
+using UAZ_KST_IS.Business.Services.Implementations;
+using UAZ_KST_IS.Business.Services.Interfaces;
 using UAZ_KST_IS.Data.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +19,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
+builder.Services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddTransient<IMenuService, MenuService>();
+builder.Services.AddTransient<IMenuCategoryService, MenuCategoryService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
