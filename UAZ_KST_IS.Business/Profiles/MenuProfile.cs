@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UAZ_KST_IS.Models.Domain.Entities;
-using UAZ_KST_IS.Models.Domain.ViewModels.Menu;
+using UAZ_KST_IS.Models.ViewModels.Menu;
 
 namespace UAZ_KST_IS.Business.Profiles
 {
