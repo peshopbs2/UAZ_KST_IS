@@ -58,7 +58,8 @@ namespace UAZ_KST_IS.Business.Services.Implementations
             var menu = await _menuRepository.Query()
                 .Include(m => m.MenuCategories)
                     .ThenInclude(mc => mc.MenuItems)
-                        .ToListAsync();
+                        .Where(item => item.Id == id)
+                        .FirstOrDefaultAsync();
             return _mapper.Map<MenuViewModel>(menu);
         }
 

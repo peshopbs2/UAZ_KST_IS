@@ -46,3 +46,11 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+@foreach(var category in Model.MenuCategories)
+{
+    <h2>@category.Title</h2>
+    @foreach(var item in category.MenuItems)
+    {
+        <h3>@item.Title - @item.Price</h3>
+    }
+}

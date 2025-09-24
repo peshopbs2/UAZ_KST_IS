@@ -35,7 +35,7 @@ namespace UAZ_KST_IS.Controllers
                 return NotFound();
             }
 
-            var menu = await _menuService.GetByIdAsync(id.Value);
+            var menu = await _menuService.GetFullMenuByIdAsync(id.Value);
             if (menu == null)
             {
                 return NotFound();
