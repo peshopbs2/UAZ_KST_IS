@@ -13,5 +13,6 @@ namespace UAZ_KST_IS.Models.Domain.Entities
         public Guid MenuId { get; set; }
         public Menu Menu { get; set; } = null!;
         public int DisplayOrder { get; set; }
+        public List<MenuItem> MenuItems { get; set; } = null!;
     }
 }

@@ -11,6 +11,7 @@ namespace UAZ_KST_IS.Business.Services.Interfaces
     {
         Task<IEnumerable<MenuViewModel>> GetAllAsync();
         Task<MenuViewModel> GetByIdAsync(Guid id);
+        Task<MenuViewModel> GetFullMenuByIdAsync(Guid id);
         Task<MenuViewModel> CreateAsync(MenuCreateViewModel model);
         Task<MenuViewModel> UpdateAsync(MenuEditViewModel model);
         Task<bool> DeleteAsync(Guid id);

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,15 @@ namespace UAZ_KST_IS.Business.Services.Implementations
         {
             var menu = await _menuRepository.GetByIdAsync(id) ?? throw new InvalidOperationException($"There is no menu with id {id}");
 
+            return _mapper.Map<MenuViewModel>(menu);
+        }
+
+        public async Task<MenuViewModel> GetFullMenuByIdAsync(Guid id)
+        {
+            var menu = await _menuRepository.Query()
+                .Include(m => m.MenuCategories)
+                    .ThenInclude(mc => mc.MenuItems)
+                        .ToListAsync();
             return _mapper.Map<MenuViewModel>(menu);
         }
 

@@ -11,5 +11,6 @@ namespace UAZ_KST_IS.Models.Domain.Entities
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public bool IsActive { get; set; }
+        public List<MenuCategory> MenuCategories { get; set; } = null!;
     }
 }

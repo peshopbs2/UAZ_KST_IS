@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UAZ_KST_IS.Models.ViewModels.MenuItem;
 
 namespace UAZ_KST_IS.Models.ViewModels.MenuCategory
 {
@@ -13,5 +14,6 @@ namespace UAZ_KST_IS.Models.ViewModels.MenuCategory
         public Guid MenuId { get; set; }
         public string MenuTitle { get; set; } = string.Empty;
         public int DisplayOrder { get; set; }
+        public List<MenuItemViewModel> MenuItems { get; set; } = null!;
     }
 }
