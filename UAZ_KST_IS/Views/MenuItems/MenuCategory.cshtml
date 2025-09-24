@@ -50,7 +50,8 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Price)
+                    @Html.DisplayFor(modelItem => item.Price) BGN /
+                    @Math.Round(item.Price / 1.95583, 2) EUR
                 </td>
                 <td>
                     <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" width="250" />
